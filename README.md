@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Release ThanhDieu.Com V5 Tester
 
 ## Mô Tả V5.0.0
@@ -29,3 +30,6 @@ Chỉnh sửa tài nguyên ở: {domain}/res/v5/*
 ![ThanhDieu.Com](https://i.imgur.com/urmLd6H.png)
 ![ThanhDieu.Com](https://i.imgur.com/tOWfTBQ.png)
 ![ThanhDieu.Com](https://i.imgur.com/jjvyIvG.png)
+=======
+"# vanhao.space-web" 
+>>>>>>> 99b98aaa015535551e921ab0a5ec91b47f5248f8
