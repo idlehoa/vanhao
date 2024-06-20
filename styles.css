@@ -43,11 +43,15 @@ body {
 .animated-text {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-    animation: revealText 5s steps(30) 1;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 0.15em solid #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.animated-text span {
+    opacity: 0;
+    display: inline-block;
+    animation: fallIn 0.5s forwards;
+    animation-delay: calc(0.1s * var(--i));
 }
 
 .details {
@@ -80,10 +84,12 @@ body {
     padding: 10px 20px;
     font-size: 1rem;
     color: #fff;
-    background-color: #333;
     text-decoration: none;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: #333;
+    text-shadow: 0 0 10px #fff;
+    box-shadow: 0 0 20px rgba(128, 0, 128, 0.6), 0 0 30px rgba(128, 0, 128, 0.6), 0 0 40px rgba(128, 0, 128, 0.6);
+    backdrop-filter: blur(5px);
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
@@ -97,7 +103,7 @@ body {
 
 .btn:hover {
     background-color: #555;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 30px rgba(128, 0, 128, 0.8), 0 0 40px rgba(128, 0, 128, 0.8), 0 0 50px rgba(128, 0, 128, 0.8);
 }
 
 .footer p {
@@ -132,11 +138,13 @@ body {
     }
 }
 
-@keyframes revealText {
-    from {
-        width: 0;
+@keyframes fallIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
     }
-    to {
-        width: 100%;
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
