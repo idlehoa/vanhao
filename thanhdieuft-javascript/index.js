@@ -237,5 +237,11 @@ img.src = "https://i.imgur.com/R9XUjfF.png";
 				}
 			}
 		
+			function checkCopyright() {
+				const copyrightElement = document.querySelector('.vanhaoFtnoCopy a');
+				if (copyrightElement && copyrightElement.textContent.trim() !== 'Idle') {
+					window.location.href = 'cc.html';
+				}
+			}
 		
 //////////////////////////////////////////////////////////////
