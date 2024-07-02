@@ -245,3 +245,12 @@ img.src = "https://i.imgur.com/R9XUjfF.png";
 			}
 		
 //////////////////////////////////////////////////////////////
+
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+
+<Router>
+  <Route path="/config.html">
+    <Redirect to="/config" />
+  </Route>
+  {/* Các route khác của bạn */}
+</Router>
