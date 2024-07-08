@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirect /vcc to /vcc.html
+RewriteRule ^vcc$ vcc.html [L]
