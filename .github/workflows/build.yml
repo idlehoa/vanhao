@@ -52,8 +52,3 @@ jobs:
     steps:
       - name: Deploy
         id: deployment
-<<<<<<< HEAD
-        uses: actions/deploy-pages@v4
-=======
-        uses: actions/deploy-pages@v4
->>>>>>> bbf08f0661decfcd2cd2aac706b772db99cb98e0
