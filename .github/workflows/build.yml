@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ['main']
+    branches: 'main'
 
 jobs:
   build_site:
@@ -10,39 +10,32 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 1 
 
+      # If you're using pnpm, add this step then change the commands and cache key below to use `pnpm`
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 8  
+          version: 8
 
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20 
-          cache: 'pnpm' 
-
-      - name: Cache pnpm store
-        uses: actions/cache@v3
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-pnpm-v1-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-v1-
-
+          node-version: 20
+      
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile  
+        run: pnpm install
 
-      - name: Build
-        run: pnpm build --no-lint --base=/${{ github.event.repository.name }}  
+      - name: build
+        env:
+          BASE_PATH: '/${{ github.event.repository.name }}'
+        run: |
+          pnpm build
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
+          # this should match the `pages` option in your adapter-static options
           path: 'build/'
-          retention-days: 7 
 
   deploy:
     needs: build_site
@@ -60,5 +53,3 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          timeout: 600000   
