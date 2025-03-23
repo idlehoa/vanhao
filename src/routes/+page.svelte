@@ -1,8 +1,8 @@
 <script>
   import { onMount } from 'svelte';
   import { fade, slide } from 'svelte/transition';
-  import info from '$lib/data/info.json';
-  import Intro from './Intro.svelte'; // Import Intro component
+  import info from '$lib/data/info.json'; 
+  import Intro from './Intro.svelte'; 
 
   let isDark = true;
   let copiedEmail = false;
@@ -10,7 +10,7 @@
   let isLoading = true;
   let loadingProgress = 0;
 
-  const personalInfo = info;
+  const personalInfo = info; 
   const languages = ["JavaScript", "Python", "CSS", "C++", "Java", "HTML", "Node.js"];
 
   onMount(() => {
@@ -53,7 +53,7 @@
     {#each Array(30) as _, i}
       <div 
         class="w-1.5 h-1.5 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full 
-               absolute animate-float opacity-60 blur-sm"
+               absolute opacity-60 blur-sm animate-[float_5s_ease-in-out_infinite]"
         style="top: {Math.random() * 100}%; left: {Math.random() * 100}%; 
                animation-delay: {Math.random() * 6}s;"
       ></div>
@@ -83,19 +83,19 @@
                   from-indigo-600 to-purple-600 flex items-center justify-center text-6xl 
                   font-extrabold text-white shadow-xl ring-4 ring-indigo-200/50 
                   dark:ring-purple-900/50 transition-all duration-300 hover:ring-8 
-                  hover:ring-opacity-70 animate-float-slow">
+                  hover:ring-opacity-70 animate-[float-slow_4s_ease-in-out_infinite]">
         {personalInfo.name[0]}
       </div>
       <h1 class="text-5xl font-extrabold bg-clip-text text-transparent 
                   bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 
-                  dark:to-purple-400 animate-slide-up">
+                  dark:to-purple-400 animate-[slide-up_0.8s_ease-out]">
         {personalInfo.name}
       </h1>
       <p class="text-xl mt-3 font-medium text-gray-600 dark:text-gray-200">
         {personalInfo.occupation}
       </p>
       <p class="text-sm mt-2 text-gray-500 dark:text-gray-300 flex justify-center 
-                  items-center gap-3 animate-fade-in">
+                  items-center gap-3 animate-[fade-in_1s_ease-out]">
         <span class="text-pink-500 animate-pulse">💖</span> {personalInfo.location} 
         <a href={personalInfo.github} target="_blank" 
            class="ml-2 text-indigo-500 dark:text-indigo-400 hover:underline 
@@ -122,11 +122,11 @@
     <div in:fade={{ delay: 3400 }} class="mb-10">
       <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 
                   bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
-        Thanh toán
+        Payment
       </h2>
       <a href="/payment" class="text-indigo-500 dark:text-indigo-400 hover:underline 
              text-lg font-medium transition-colors duration-200">
-        Xem thông tin thanh toán
+        Click Here
       </a>
     </div>
 
@@ -134,7 +134,7 @@
     <div in:fade={{ delay: 3600 }} class="mb-10">
       <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 
                   bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
-        Ngôn ngữ
+        Language
       </h2>
       <div class="flex flex-wrap gap-3">
         {#each languages as language}
@@ -154,7 +154,7 @@
     <div in:fade={{ delay: 3800 }} class="mb-10">
       <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 
                   bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
-        Liên hệ
+        Contact
       </h2>
       <div class="space-y-4 bg-indigo-50/50 dark:bg-indigo-900/30 p-6 rounded-xl 
                   shadow-inner border border-indigo-100/50 dark:border-indigo-800/50">
@@ -207,7 +207,7 @@
     <div in:fade={{ delay: 4000 }} class="mb-10">
       <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 
                   bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
-        Mạng xã hội
+        Social Media
       </h2>
       <div class="flex gap-6 justify-center">
         <a href={personalInfo.social.github} target="_blank" 
@@ -216,17 +216,17 @@
                   text-lg font-medium hover:scale-110">
           GitHub
         </a>
-        <a href={personalInfo.social.linkedin} target="_blank" 
+        <a href={personalInfo.social.facebook} target="_blank" 
            class="text-gray-600 dark:text-gray-200 hover:text-indigo-500 
                   dark:hover:text-indigo-400 transition-all duration-300 
                   text-lg font-medium hover:scale-110">
-          LinkedIn
+          Facebook
         </a>
-        <a href={personalInfo.social.twitter} target="_blank" 
+        <a href={personalInfo.social.discord} target="_blank" 
            class="text-gray-600 dark:text-gray-200 hover:text-indigo-500 
                   dark:hover:text-indigo-400 transition-all duration-300 
                   text-lg font-medium hover:scale-110">
-          Twitter
+          Discord
         </a>
       </div>
     </div>
@@ -238,30 +238,3 @@
     </div>
   </div>
 </main>
-
-<style>
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-  }
-
-  @keyframes float-slow {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  @keyframes slide-up {
-    0% { transform: translateY(20px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-  }
-
-  @keyframes fade-in {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-
-  .animate-float { animation: float 5s ease-in-out infinite; }
-  .animate-float-slow { animation: float-slow 4s ease-in-out infinite; }
-  .animate-slide-up { animation: slide-up 0.8s ease-out; }
-  .animate-fade-in { animation: fade-in 1s ease-out; }
-</style>
