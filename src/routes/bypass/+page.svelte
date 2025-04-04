@@ -244,15 +244,9 @@
             <h3 class="text-3xl font-orbitron text-center mb-12 bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent animate-text-glow">
                 About the Depths
             </h3>
-<<<<<<< HEAD
             <div class="glass-container p-8 rounded-xl shadow-ocean">
                 <p class="text-cyan-100 text-center font-roboto-mono animate-wave-text">
                     Atlantis Bypasser: Unleash the power of the sea to bypass ads. Swift, secure, and free—crafted by xAI.
-=======
-            <div class="glass-container p-8 rounded-xl shadow-neon">
-                <p class="text-gray-300 text-center font-roboto-mono">
-                    Neon Bypasser: Skip ad-links with ease. Fast, secure, and Client-Side bypass.
->>>>>>> f26ed39cb2d19574a0430040dfba44ee3b974ee3
                 </p>
             </div>
         </section>
