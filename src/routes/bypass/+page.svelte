@@ -110,7 +110,7 @@
     onMount(() => {
         document.body.classList.add('loaded');
         // Simulate initial stats
-        stats = { totalBypasses: 1234, successRate: 98, avgTime: 150 };
+        stats = { totalBypasses: Unknow, successRate: 98, avgTime: 150 };
         totalBypasses.set(stats.totalBypasses);
         successRate.set(stats.successRate);
         avgTime.set(stats.avgTime);
