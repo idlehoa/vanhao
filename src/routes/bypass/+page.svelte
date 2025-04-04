@@ -16,12 +16,12 @@
     let successRate = tweened(0, { duration: 1000 });
     let avgTime = tweened(0, { duration: 1000 });
 
-    // Features array
+    // Features array (Cập nhật với icon đẹp hơn)
     const features = [
-        { icon: '⚡', title: 'Lightning Fast', desc: 'Bypass links in milliseconds.', delay: 0 },
-        { icon: '🔒', title: 'Secure & Safe', desc: 'No ads, no malware.', delay: 200 },
-        { icon: '🌌', title: 'Neon Design', desc: 'Futuristic UI experience.', delay: 400 },
-        { icon: '💎', title: 'Always Free', desc: 'No hidden fees.', delay: 600 },
+        { icon: '🌊', title: 'Oceanic Flow', desc: 'Bypass with fluid speed.', delay: 0 },
+        { icon: '🪸', title: 'Coral Shield', desc: 'Safe as the reef.', delay: 200 },
+        { icon: '✨', title: 'Aqua Glow', desc: 'Mesmerizing ocean UI.', delay: 400 },
+        { icon: '🐬', title: 'Free Tides', desc: 'No hidden depths.', delay: 600 },
     ];
 
     // Improved URL validation
@@ -109,7 +109,6 @@
 
     onMount(() => {
         document.body.classList.add('loaded');
-        // Simulate initial stats
         stats = { totalBypasses: 1234, successRate: 98, avgTime: 150 };
         totalBypasses.set(stats.totalBypasses);
         successRate.set(stats.successRate);
@@ -118,54 +117,61 @@
 </script>
 
 <svelte:head>
-    <title>Neon Link Bypasser - Instant & Free</title>
-    <meta name="description" content="Bypass ad-links with style. Free, fast, and secure.">
+    <title>Atlantis Link Bypasser - Dive into Freedom</title>
+    <meta name="description" content="Bypass ad-links with the elegance of the ocean. Fast, secure, and free.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </svelte:head>
 
-<div class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white font-inter overflow-hidden relative">
-    <!-- Particle Background -->
-    <div class="particles absolute inset-0 pointer-events-none">
-        {#each Array(50) as _, i}
+<div class="min-h-screen bg-gradient-to-br from-blue-950 via-teal-900 to-cyan-700 text-white font-inter overflow-hidden relative">
+    <!-- Animated Wave Background -->
+    <div class="waves absolute inset-0 pointer-events-none">
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+    </div>
+
+    <!-- Bubble Background -->
+    <div class="bubbles absolute inset-0 pointer-events-none">
+        {#each Array(60) as _, i}
             <div 
-                class="particle" 
+                class="bubble" 
                 style="
                     left: {Math.random() * 100}%;
-                    top: {Math.random() * 100}%;
-                    animation-delay: {Math.random() * 5}s;
-                    animation-duration: {5 + Math.random() * 10}s;
-                    --size: {2 + Math.random() * 3}px;
+                    bottom: {Math.random() * 100}%;
+                    animation-delay: {Math.random() * 6}s;
+                    animation-duration: {4 + Math.random() * 8}s;
+                    --size: {3 + Math.random() * 6}px;
                 "
             ></div>
         {/each}
     </div>
 
-    <!-- Glowing Orbs -->
-    <div class="orbs absolute inset-0 pointer-events-none">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
+    <!-- Glowing Ocean Lights -->
+    <div class="ocean-lights absolute inset-0 pointer-events-none">
+        <div class="light light-1"></div>
+        <div class="light light-2"></div>
+        <div class="light light-3"></div>
     </div>
 
     <!-- Main Content -->
     <main class="relative z-10 flex flex-col items-center justify-center min-h-screen pt-16 pb-16 px-4">
         <div class="w-full max-w-3xl glass-container p-8 rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500">
-            <h2 class="text-4xl md:text-5xl font-orbitron text-center mb-6 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent animate-text-glow">
-                Neon Link Bypasser
+            <h2 class="text-4xl md:text-5xl font-orbitron text-center mb-6 bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent animate-text-glow">
+                Atlantis Link Bypasser
             </h2>
-            <p class="text-center text-gray-300 mb-8 font-roboto-mono">Skip ads with neon speed!</p>
+            <p class="text-center text-cyan-100 mb-8 font-roboto-mono animate-wave-text">Surf through ads with oceanic grace</p>
 
             <div class="flex flex-col sm:flex-row gap-4 mb-8">
                 <input 
                     type="text" 
                     bind:value={linkInput}
-                    placeholder="Paste your URL here..."
-                    class="flex-1 p-4 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-white placeholder-gray-500 transition-all duration-300 glass-input shadow-inner font-roboto-mono"
+                    placeholder="Drop your URL into the sea..."
+                    class="flex-1 p-4 bg-teal-900/30 border border-cyan-700/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white placeholder-cyan-300 transition-all duration-300 glass-input shadow-inner font-roboto-mono"
                     disabled={isProcessing}
                 />
                 <button 
                     on:click={handleBypass}
                     disabled={isProcessing}
- W                    class="px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 disabled:bg-gray-600 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 disabled:scale-100 shadow-neon font-orbitron"
+                    class="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 disabled:bg-teal-800 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 disabled:scale-100 shadow-ocean font-orbitron"
                 >
                     {#if isProcessing}
                         <span class="flex items-center gap-2">
@@ -176,13 +182,13 @@
                             Bypassing...
                         </span>
                     {:else}
-                        Bypass Now
+                        Dive In
                     {/if}
                 </button>
             </div>
 
             {#if error}
-                <div in:fade={{ duration: 300 }} class="p-4 bg-red-900/50 rounded-lg text-red-200 text-center shadow-inner font-roboto-mono">
+                <div in:fade={{ duration: 300 }} class="p-4 bg-red-900/40 rounded-lg text-red-100 text-center shadow-inner font-roboto-mono">
                     {error}
                 </div>
             {/if}
@@ -190,18 +196,18 @@
 
         <!-- Features Section -->
         <section id="features" class="mt-24 w-full max-w-5xl">
-            <h3 class="text-3xl font-orbitron text-center mb-12 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent animate-text-glow">
-                Why Choose Us?
+            <h3 class="text-3xl font-orbitron text-center mb-12 bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent animate-text-glow">
+                Why Dive with Us?
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 {#each features as feature}
                     <div 
-                        in:fly={{ y: 50, duration: 500, delay: feature.delay }}
-                        class="glass-container p-6 rounded-xl hover:shadow-neon transition-all duration-300 transform hover:-translate-y-2"
+                        in:fly={{ y: 50, duration: 600, delay: feature.delay }}
+                        class="glass-container p-6 rounded-xl hover:shadow-ocean transition-all duration-300 transform hover:-translate-y-2"
                     >
-                        <div class="text-4xl mb-4 text-orange-400 animate-pulse">{feature.icon}</div>
+                        <div class="text-4xl mb-4 text-cyan-300 animate-pulse">{feature.icon}</div>
                         <h4 class="text-xl font-semibold mb-2 text-white font-orbitron">{feature.title}</h4>
-                        <p class="text-gray-300 font-roboto-mono">{feature.desc}</p>
+                        <p class="text-cyan-100 font-roboto-mono">{feature.desc}</p>
                     </div>
                 {/each}
             </div>
@@ -209,33 +215,33 @@
 
         <!-- Stats Section -->
         <section id="stats" class="mt-24 w-full max-w-5xl">
-            <h3 class="text-3xl font-orbitron text-center mb-12 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent animate-text-glow">
-                Our Stats
+            <h3 class="text-3xl font-orbitron text-center mb-12 bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent animate-text-glow">
+                Ocean Stats
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div in:fly={{ y: 50, duration: 500, delay: 0 }} class="glass-container p-6 rounded-xl hover:shadow-neon transition-all duration-300 transform hover:-translate-y-2">
+                <div in:fly={{ y: 50, duration: 600, delay: 0 }} class="glass-container p-6 rounded-xl hover:shadow-ocean transition-all duration-300 transform hover:-translate-y-2">
                     <h4 class="text-xl font-semibold mb-2 text-white font-orbitron">Total Bypasses</h4>
-                    <p class="text-3xl font-orbitron text-orange-400">{$totalBypasses.toLocaleString()}</p>
+                    <p class="text-3xl font-orbitron text-cyan-300">{$totalBypasses.toLocaleString()}</p>
                 </div>
-                <div in:fly={{ y: 50, duration: 500, delay: 200 }} class="glass-container p-6 rounded-xl hover:shadow-neon transition-all duration-300 transform hover:-translate-y-2">
+                <div in:fly={{ y: 50, duration: 600, delay: 200 }} class="glass-container p-6 rounded-xl hover:shadow-ocean transition-all duration-300 transform hover:-translate-y-2">
                     <h4 class="text-xl font-semibold mb-2 text-white font-orbitron">Success Rate</h4>
-                    <p class="text-3xl font-orbitron text-orange-400">{$successRate.toFixed(1)}%</p>
+                    <p class="text-3xl font-orbitron text-cyan-300">{$successRate.toFixed(1)}%</p>
                 </div>
-                <div in:fly={{ y: 50, duration: 500, delay: 400 }} class="glass-container p-6 rounded-xl hover:shadow-neon transition-all duration-300 transform hover:-translate-y-2">
+                <div in:fly={{ y: 50, duration: 600, delay: 400 }} class="glass-container p-6 rounded-xl hover:shadow-ocean transition-all duration-300 transform hover:-translate-y-2">
                     <h4 class="text-xl font-semibold mb-2 text-white font-orbitron">Avg. Time</h4>
-                    <p class="text-3xl font-orbitron text-orange-400">{$avgTime} ms</p>
+                    <p class="text-3xl font-orbitron text-cyan-300">{$avgTime} ms</p>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
         <section id="about" class="mt-24 w-full max-w-5xl">
-            <h3 class="text-3xl font-orbitron text-center mb-12 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent animate-text-glow">
-                About Us
+            <h3 class="text-3xl font-orbitron text-center mb-12 bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent animate-text-glow">
+                About the Depths
             </h3>
-            <div class="glass-container p-8 rounded-xl shadow-neon">
-                <p class="text-gray-300 text-center font-roboto-mono">
-                    Neon Bypasser: Skip ad-links with ease. Fast, secure, and free—powered by xAI.
+            <div class="glass-container p-8 rounded-xl shadow-ocean">
+                <p class="text-cyan-100 text-center font-roboto-mono animate-wave-text">
+                    Atlantis Bypasser: Unleash the power of the sea to bypass ads. Swift, secure, and free—crafted by xAI.
                 </p>
             </div>
         </section>
@@ -245,7 +251,7 @@
     {#if showModal && result}
         <div 
             in:fade={{ duration: 300 }}
-            class="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-30"
+            class="fixed inset-0 bg-black/70 backdrop-blur-lg flex items-center justify-center z-30"
             on:click={() => setTimeout(() => showModal = false, 100)}
         >
             <div 
@@ -253,25 +259,25 @@
                 class="glass-container p-8 rounded-2xl w-full max-w-lg shadow-2xl transform hover:rotate-1 transition-transform duration-300"
                 on:click|stopPropagation
             >
-                <h3 class="text-2xl font-orbitron mb-6 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent animate-text-glow">
-                    Bypass Complete!
+                <h3 class="text-2xl font-orbitron mb-6 bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent animate-text-glow">
+                    Surfaced Successfully!
                 </h3>
                 <div class="space-y-4">
-                    <p class="text-gray-300 break-all font-roboto-mono">
-                        <strong class="text-orange-400">URL:</strong> 
-                        <a href={result.url} target="_blank" class="text-orange-400 hover:underline">{result.url}</a>
+                    <p class="text-cyan-100 break-all font-roboto-mono">
+                        <strong class="text-cyan-300">URL:</strong> 
+                        <a href={result.url} target="_blank" class="text-cyan-300 hover:underline">{result.url}</a>
                     </p>
-                    <p class="text-gray-300 font-roboto-mono"><strong class="text-orange-400">Summary:</strong> {result.aiSummary}</p>
-                    <p class="text-gray-300 font-roboto-mono"><strong class="text-orange-400">Time:</strong> {result.timestamp}</p>
-                    <p class="text-gray-300 font-roboto-mono"><strong class="text-orange-400">Speed:</strong> {result.bypassTime} ms</p>
+                    <p class="text-cyan-100 font-roboto-mono"><strong class="text-cyan-300">Summary:</strong> {result.aiSummary}</p>
+                    <p class="text-cyan-100 font-roboto-mono"><strong class="text-cyan-300">Time:</strong> {result.timestamp}</p>
+                    <p class="text-cyan-100 font-roboto-mono"><strong class="text-cyan-300">Speed:</strong> {result.bypassTime} ms</p>
                     <div>
-                        <div class="flex justify-between text-sm text-gray-400 mb-2 font-roboto-mono">
+                        <div class="flex justify-between text-sm text-cyan-200 mb-2 font-roboto-mono">
                             <span>NSFW Score:</span>
                             <span>{result.nsfwScore}/100</span>
                         </div>
-                        <div class="w-full h-3 bg-gray-700 rounded-full overflow-hidden shadow-inner">
+                        <div class="w-full h-3 bg-teal-900/50 rounded-full overflow-hidden shadow-inner">
                             <div 
-                                class="h-full bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-1000"
+                                class="h-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-1000 animate-wave-bar"
                                 style="width: {result.nsfwScore}%"
                             ></div>
                         </div>
@@ -279,13 +285,13 @@
                     <div class="flex gap-4">
                         <button 
                             on:click={copyToClipboard}
-                            class="flex-1 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-semibold transition-all duration-300 shadow-neon font-orbitron"
+                            class="flex-1 py-3 bg-teal-800/70 hover:bg-teal-700 rounded-lg font-semibold transition-all duration-300 shadow-ocean font-orbitron"
                         >
                             Copy
                         </button>
                         <button 
                             on:click={openUrl}
-                            class="flex-1 py-3 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-lg font-semibold transition-all duration-300 shadow-neon font-orbitron"
+                            class="flex-1 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 rounded-lg font-semibold transition-all duration-300 shadow-ocean font-orbitron"
                         >
                             Open
                         </button>
@@ -293,7 +299,7 @@
                 </div>
                 <button 
                     on:click={() => showModal = false}
-                    class="absolute top-4 right-4 text-gray-400 hover:text-white transition-all duration-300"
+                    class="absolute top-4 right-4 text-cyan-200 hover:text-white transition-all duration-300"
                 >
                     ✕
                 </button>
@@ -302,21 +308,21 @@
     {/if}
 
     <!-- Sidebar -->
-    <aside class="fixed top-1/2 right-0 transform -translate-y-1/2 bg-gray-900/80 backdrop-blur-md p-4 rounded-l-2xl shadow-lg z-20">
+    <aside class="fixed top-1/2 right-0 transform -translate-y-1/2 bg-teal-900/70 backdrop-blur-lg p-4 rounded-l-2xl shadow-lg z-20">
         <div class="flex flex-col gap-6">
-            <a href="https://discord.gg/PTz2sSGeHf" target="_blank" class="text-2xl text-orange-400 hover:text-red-400 transition-all duration-300 animate-bounce">💬</a>
-            <a href="https://twitter.com/coconcac" target="_blank" class="text-2xl text-orange-400 hover:text-red-400 transition-all duration-300 animate-bounce">🐦</a>
-            <a href="mailto:vanhao29t4@gmail.com" class="text-2xl text-orange-400 hover:text-red-400 transition-all duration-300 animate-bounce">✉️</a>
+            <a href="https://discord.gg/PTz2sSGeHf" target="_blank" class="text-2xl text-cyan-300 hover:text-blue-400 transition-all duration-300 animate-bounce">💬</a>
+            <a href="https://twitter.com/coconcac" target="_blank" class="text-2xl text-cyan-300 hover:text-blue-400 transition-all duration-300 animate-bounce">🐦</a>
+            <a href="mailto:vanhao29t4@gmail.com" class="text-2xl text-cyan-300 hover:text-blue-400 transition-all duration-300 animate-bounce">✉️</a>
         </div>
     </aside>
 
     <!-- Footer -->
-    <footer class="relative z-10 bg-gray-900/80 backdrop-blur-md py-8 px-4 text-center border-t border-gray-800/50">
-        <p class="text-gray-400 font-roboto-mono">© 2025 Neon Link Bypasser - Powered by fatality.cuti</p>
+    <footer class="relative z-10 bg-teal-900/70 backdrop-blur-lg py-8 px-4 text-center border-t border-teal-800/50">
+        <p class="text-cyan-200 font-roboto-mono">© 2025 Atlantis Link Bypasser - Powered by fatality.cuti</p>
         <div class="mt-4 flex justify-center gap-6">
-            <a href="#features" class="text-gray-300 hover:text-orange-400 transition-all duration-300 neon-hover font-roboto-mono">Features</a>
-            <a href="#stats" class="text-gray-300 hover:text-orange-400 transition-all duration-300 neon-hover font-roboto-mono">Stats</a>
-            <a href="#about" class="text-gray-300 hover:text-orange-400 transition-all duration-300 neon-hover font-roboto-mono">About</a>
+            <a href="#features" class="text-cyan-100 hover:text-cyan-300 transition-all duration-300 ocean-hover font-roboto-mono">Features</a>
+            <a href="#stats" class="text-cyan-100 hover:text-cyan-300 transition-all duration-300 ocean-hover font-roboto-mono">Stats</a>
+            <a href="#about" class="text-cyan-100 hover:text-cyan-300 transition-all duration-300 ocean-hover font-roboto-mono">About</a>
         </div>
     </footer>
 </div>
@@ -326,92 +332,147 @@
         margin: 0;
         padding: 0;
         font-family: 'Inter', sans-serif;
-        background: #0a0a0a;
+        background: #001f3f;
         transition: opacity 0.5s ease;
     }
     :global(body.loaded) {
         opacity: 1;
     }
 
-    /* Particle Effects */
-    .particles { overflow: hidden; }
-    .particle {
+    /* Animated Wave Background */
+    .waves {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+    }
+    .wave {
+        position: absolute;
+        width: 200%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(0, 196, 204, 0.15) 10%, transparent 70%);
+        animation: wave-flow infinite linear;
+    }
+    .wave-1 {
+        top: 70%;
+        animation-duration: 20s;
+    }
+    .wave-2 {
+        top: 80%;
+        animation-duration: 25s;
+        animation-delay: -5s;
+        opacity: 0.8;
+    }
+    @keyframes wave-flow {
+        0% { transform: translateX(-50%) scale(1); }
+        50% { transform: translateX(0%) scale(1.05); }
+        100% { transform: translateX(-50%) scale(1); }
+    }
+
+    /* Bubble Effects */
+    .bubbles { overflow: hidden; }
+    .bubble {
         position: absolute;
         width: var(--size);
         height: var(--size);
-        background: rgba(255, 107, 0, 0.6);
+        background: radial-gradient(circle, rgba(0, 255, 204, 0.6) 20%, rgba(0, 116, 217, 0.2) 80%);
         border-radius: 50%;
-        animation: float infinite linear;
-        box-shadow: 0 0 8px rgba(255, 107, 0, 0.4);
+        animation: rise infinite ease-in-out;
+        box-shadow: 0 0 10px rgba(0, 196, 204, 0.4);
     }
-    @keyframes float {
-        0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
-        50% { opacity: 0.8; }
-        100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+    @keyframes rise {
+        0% { transform: translateY(0) scale(0.5); opacity: 0; }
+        50% { opacity: 0.8; transform: translateY(-50vh) scale(1); }
+        100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
     }
 
-    /* Glowing Orbs */
-    .orbs { overflow: hidden; }
-    .orb {
+    /* Glowing Ocean Lights */
+    .ocean-lights { overflow: hidden; }
+    .light {
         position: absolute;
         border-radius: 50%;
-        filter: blur(40px);
-        animation: orbit infinite linear;
+        filter: blur(60px);
+        animation: glow infinite ease-in-out;
     }
-    .orb-1 {
+    .light-1 {
+        width: 240px;
+        height: 240px;
+        top: 10%;
+        left: 20%;
+        background: rgba(0, 255, 204, 0.25);
+        animation-duration: 12s;
+    }
+    .light-2 {
         width: 180px;
         height: 180px;
-        top: 15%;
-        left: 20%;
-        background: rgba(255, 107, 0, 0.25);
+        bottom: 15%;
+        right: 25%;
+        background: rgba(0, 116, 217, 0.2);
+        animation-duration: 15s;
+        animation-delay: -3s;
+    }
+    .light-3 {
+        width: 200px;
+        height: 200px;
+        top: 50%;
+        left: 70%;
+        background: rgba(0, 196, 204, 0.15);
         animation-duration: 18s;
+        animation-delay: -6s;
     }
-    .orb-2 {
-        width: 140px;
-        height: 140px;
-        bottom: 25%;
-        right: 20%;
-        background: rgba(255, 0, 0, 0.2);
-        animation-duration: 22s;
-        animation-delay: -4s;
-    }
-    @keyframes orbit {
-        0% { transform: translate(0, 0); }
-        25% { transform: translate(40px, -40px); }
-        50% { transform: translate(0, 0); }
-        75% { transform: translate(-40px, 40px); }
-        100% { transform: translate(0, 0); }
+    @keyframes glow {
+        0% { transform: scale(1); opacity: 0.5; }
+        50% { transform: scale(1.15); opacity: 0.8; }
+        100% { transform: scale(1); opacity: 0.5; }
     }
 
     /* Glassmorphism */
     .glass-container {
-        background: rgba(255, 255, 255, 0.06);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(0, 255, 204, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 196, 204, 0.1);
     }
     .glass-input {
-        background: rgba(255, 255, 255, 0.04);
-        backdrop-filter: blur(6px);
+        background: rgba(255, 255, 255, 0.07);
+        backdrop-filter: blur(10px);
     }
 
-    /* Neon Effects */
-    .shadow-neon {
-        box-shadow: 0 0 12px rgba(255, 107, 0, 0.6), 
-                   0 0 25px rgba(255, 107, 0, 0.4),
-                   inset 0 0 8px rgba(255, 107, 0, 0.2);
+    /* Ocean Effects */
+    .shadow-ocean {
+        box-shadow: 0 0 15px rgba(0, 255, 204, 0.6), 
+                   0 0 30px rgba(0, 116, 217, 0.4),
+                   inset 0 0 10px rgba(0, 196, 204, 0.2);
     }
-    .neon-hover:hover {
-        text-shadow: 0 0 4px rgba(255, 107, 0, 0.9),
-                    0 0 8px rgba(255, 107, 0, 0.7);
+    .ocean-hover:hover {
+        text-shadow: 0 0 6px rgba(0, 255, 204, 0.9),
+                    0 0 12px rgba(0, 116, 217, 0.7);
     }
 
     /* Text Glow Animation */
     .animate-text-glow {
-        animation: text-glow 1.8s infinite alternate;
+        animation: text-glow 2s infinite alternate;
     }
     @keyframes text-glow {
-        0% { text-shadow: 0 0 4px rgba(255, 107, 0, 0.6), 0 0 8px rgba(255, 107, 0, 0.4); }
-        100% { text-shadow: 0 0 12px rgba(255, 107, 0, 0.9), 0 0 25px rgba(255, 107, 0, 0.6); }
+        0% { text-shadow: 0 0 6px rgba(0, 255, 204, 0.6), 0 0 12px rgba(0, 116, 217, 0.4); }
+        100% { text-shadow: 0 0 15px rgba(0, 255, 204, 0.9), 0 0 30px rgba(0, 116, 217, 0.6); }
+    }
+
+    /* Wave Text Animation */
+    .animate-wave-text {
+        animation: wave-text 3s infinite ease-in-out;
+    }
+    @keyframes wave-text {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+    }
+
+    /* Wave Bar Animation */
+    .animate-wave-bar {
+        animation: wave-bar 2s infinite linear;
+    }
+    @keyframes wave-bar {
+        0% { background-position: 0%; }
+        100% { background-position: 200%; }
     }
 
     /* Bounce Animation */
@@ -420,7 +481,7 @@
     }
     @keyframes bounce {
         0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-8px); }
+        50% { transform: translateY(-10px); }
     }
 
     /* Custom Fonts */
