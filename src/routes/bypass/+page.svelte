@@ -16,7 +16,7 @@
     let successRate = tweened(0, { duration: 1000 });
     let avgTime = tweened(0, { duration: 1000 });
 
-    // Features array (Cập nhật với icon đẹp hơn)
+    // Features array
     const features = [
         { icon: '🌊', title: 'Oceanic Flow', desc: 'Bypass with fluid speed.', delay: 0 },
         { icon: '🪸', title: 'Coral Shield', desc: 'Safe as the reef.', delay: 200 },
@@ -109,12 +109,7 @@
 
     onMount(() => {
         document.body.classList.add('loaded');
-<<<<<<< HEAD
         stats = { totalBypasses: 1234, successRate: 98, avgTime: 150 };
-=======
-        // Simulate initial stats
-        stats = { totalBypasses: Unknow, successRate: 98, avgTime: 150 };
->>>>>>> f26ed39cb2d19574a0430040dfba44ee3b974ee3
         totalBypasses.set(stats.totalBypasses);
         successRate.set(stats.successRate);
         avgTime.set(stats.avgTime);
@@ -132,21 +127,37 @@
     <div class="waves absolute inset-0 pointer-events-none">
         <div class="wave wave-1"></div>
         <div class="wave wave-2"></div>
+        <div class="wave wave-3"></div>
     </div>
 
     <!-- Bubble Background -->
     <div class="bubbles absolute inset-0 pointer-events-none">
-        {#each Array(60) as _, i}
+        {#each Array(80) as _, i}
             <div 
                 class="bubble" 
                 style="
                     left: {Math.random() * 100}%;
                     bottom: {Math.random() * 100}%;
-                    animation-delay: {Math.random() * 6}s;
-                    animation-duration: {4 + Math.random() * 8}s;
-                    --size: {3 + Math.random() * 6}px;
+                    animation-delay: {Math.random() * 5}s;
+                    animation-duration: {3 + Math.random() * 7}s;
+                    --size: {2 + Math.random() * 5}px;
                 "
             ></div>
+        {/each}
+    </div>
+
+    <!-- Swimming Fish -->
+    <div class="fish-container absolute inset-0 pointer-events-none">
+        {#each Array(5) as _, i}
+            <div 
+                class="fish" 
+                style="
+                    left: {Math.random() * 100}%;
+                    top: {Math.random() * 100}%;
+                    animation-delay: {Math.random() * 10}s;
+                    animation-duration: {15 + Math.random() * 10}s;
+                "
+            >🐠</div>
         {/each}
     </div>
 
@@ -170,7 +181,7 @@
                     type="text" 
                     bind:value={linkInput}
                     placeholder="Drop your URL into the sea..."
-                    class="flex-1 p-4 bg-teal-900/30 border border-cyan-700/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white placeholder-cyan-300 transition-all duration-300 glass-input shadow-inner font-roboto-mono"
+                    class="flex-1 p-4 bg-teal-900/20 border border-cyan-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white placeholder-cyan-300 transition-all duration-300 glass-input shadow-inner font-roboto-mono"
                     disabled={isProcessing}
                 />
                 <button 
@@ -226,15 +237,15 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div in:fly={{ y: 50, duration: 600, delay: 0 }} class="glass-container p-6 rounded-xl hover:shadow-ocean transition-all duration-300 transform hover:-translate-y-2">
                     <h4 class="text-xl font-semibold mb-2 text-white font-orbitron">Total Bypasses</h4>
-                    <p class="text-3xl font-orbitron text-cyan-300">{$totalBypasses.toLocaleString()}</p>
+                    <p class="text-3xl font-orbitron text-cyan-300 animate-number-glow">{$totalBypasses.toLocaleString()}</p>
                 </div>
                 <div in:fly={{ y: 50, duration: 600, delay: 200 }} class="glass-container p-6 rounded-xl hover:shadow-ocean transition-all duration-300 transform hover:-translate-y-2">
                     <h4 class="text-xl font-semibold mb-2 text-white font-orbitron">Success Rate</h4>
-                    <p class="text-3xl font-orbitron text-cyan-300">{$successRate.toFixed(1)}%</p>
+                    <p class="text-3xl font-orbitron text-cyan-300 animate-number-glow">{$successRate.toFixed(1)}%</p>
                 </div>
                 <div in:fly={{ y: 50, duration: 600, delay: 400 }} class="glass-container p-6 rounded-xl hover:shadow-ocean transition-all duration-300 transform hover:-translate-y-2">
                     <h4 class="text-xl font-semibold mb-2 text-white font-orbitron">Avg. Time</h4>
-                    <p class="text-3xl font-orbitron text-cyan-300">{$avgTime} ms</p>
+                    <p class="text-3xl font-orbitron text-cyan-300 animate-number-glow">{$avgTime} ms</p>
                 </div>
             </div>
         </section>
@@ -246,7 +257,7 @@
             </h3>
             <div class="glass-container p-8 rounded-xl shadow-ocean">
                 <p class="text-cyan-100 text-center font-roboto-mono animate-wave-text">
-                    Atlantis Bypasser: Unleash the power of the sea to bypass ads. Swift, secure, and free—crafted by xAI.
+                    Atlantis Bypasser: Unleash the power of the sea to bypass ads. Swift, secure, and Client-Side Bypass .
                 </p>
             </div>
         </section>
@@ -354,18 +365,25 @@
         position: absolute;
         width: 200%;
         height: 100%;
-        background: radial-gradient(circle, rgba(0, 196, 204, 0.15) 10%, transparent 70%);
+        background: radial-gradient(circle, rgba(0, 255, 204, 0.2) 10%, transparent 70%);
         animation: wave-flow infinite linear;
+        opacity: 0.6;
     }
     .wave-1 {
-        top: 70%;
-        animation-duration: 20s;
+        top: 60%;
+        animation-duration: 18s;
     }
     .wave-2 {
-        top: 80%;
-        animation-duration: 25s;
-        animation-delay: -5s;
-        opacity: 0.8;
+        top: 75%;
+        animation-duration: 22s;
+        animation-delay: -4s;
+        opacity: 0.5;
+    }
+    .wave-3 {
+        top: 90%;
+        animation-duration: 26s;
+        animation-delay: -8s;
+        opacity: 0.4;
     }
     @keyframes wave-flow {
         0% { transform: translateX(-50%) scale(1); }
@@ -379,15 +397,29 @@
         position: absolute;
         width: var(--size);
         height: var(--size);
-        background: radial-gradient(circle, rgba(0, 255, 204, 0.6) 20%, rgba(0, 116, 217, 0.2) 80%);
+        background: radial-gradient(circle, rgba(0, 255, 204, 0.7) 20%, rgba(0, 116, 217, 0.3) 80%);
         border-radius: 50%;
         animation: rise infinite ease-in-out;
-        box-shadow: 0 0 10px rgba(0, 196, 204, 0.4);
+        box-shadow: 0 0 12px rgba(0, 255, 204, 0.5);
     }
     @keyframes rise {
         0% { transform: translateY(0) scale(0.5); opacity: 0; }
-        50% { opacity: 0.8; transform: translateY(-50vh) scale(1); }
-        100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+        50% { opacity: 0.9; transform: translateY(-50vh) scale(1); }
+        100% { transform: translateY(-100vh) scale(1.3); opacity: 0; }
+    }
+
+    /* Swimming Fish */
+    .fish-container { overflow: hidden; }
+    .fish {
+        position: absolute;
+        font-size: 1.5rem;
+        animation: swim infinite linear;
+        opacity: 0.7;
+    }
+    @keyframes swim {
+        0% { transform: translateX(-100vw) rotateY(0deg); }
+        50% { transform: translateX(100vw) rotateY(180deg); }
+        100% { transform: translateX(-100vw) rotateY(0deg); }
     }
 
     /* Glowing Ocean Lights */
@@ -395,71 +427,81 @@
     .light {
         position: absolute;
         border-radius: 50%;
-        filter: blur(60px);
+        filter: blur(70px);
         animation: glow infinite ease-in-out;
     }
     .light-1 {
-        width: 240px;
-        height: 240px;
-        top: 10%;
-        left: 20%;
-        background: rgba(0, 255, 204, 0.25);
-        animation-duration: 12s;
+        width: 260px;
+        height: 260px;
+        top: 5%;
+        left: 15%;
+        background: rgba(0, 255, 204, 0.3);
+        animation-duration: 10s;
     }
     .light-2 {
-        width: 180px;
-        height: 180px;
-        bottom: 15%;
-        right: 25%;
-        background: rgba(0, 116, 217, 0.2);
-        animation-duration: 15s;
-        animation-delay: -3s;
-    }
-    .light-3 {
         width: 200px;
         height: 200px;
-        top: 50%;
-        left: 70%;
-        background: rgba(0, 196, 204, 0.15);
-        animation-duration: 18s;
-        animation-delay: -6s;
+        bottom: 10%;
+        right: 20%;
+        background: rgba(0, 116, 217, 0.25);
+        animation-duration: 14s;
+        animation-delay: -2s;
+    }
+    .light-3 {
+        width: 220px;
+        height: 220px;
+        top: 45%;
+        left: 65%;
+        background: rgba(0, 196, 204, 0.2);
+        animation-duration: 16s;
+        animation-delay: -5s;
     }
     @keyframes glow {
         0% { transform: scale(1); opacity: 0.5; }
-        50% { transform: scale(1.15); opacity: 0.8; }
+        50% { transform: scale(1.2); opacity: 0.9; }
         100% { transform: scale(1); opacity: 0.5; }
     }
 
     /* Glassmorphism */
     .glass-container {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
-        border: 1px solid rgba(0, 255, 204, 0.2);
-        box-shadow: 0 4px 30px rgba(0, 196, 204, 0.1);
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(0, 255, 204, 0.25);
+        box-shadow: 0 8px 40px rgba(0, 196, 204, 0.15);
+        transition: all 0.3s ease;
     }
     .glass-input {
-        background: rgba(255, 255, 255, 0.07);
-        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
     }
 
     /* Ocean Effects */
     .shadow-ocean {
-        box-shadow: 0 0 15px rgba(0, 255, 204, 0.6), 
-                   0 0 30px rgba(0, 116, 217, 0.4),
-                   inset 0 0 10px rgba(0, 196, 204, 0.2);
+        box-shadow: 0 0 20px rgba(0, 255, 204, 0.7), 
+                   0 0 40px rgba(0, 116, 217, 0.5),
+                   inset 0 0 12px rgba(0, 196, 204, 0.3);
     }
     .ocean-hover:hover {
-        text-shadow: 0 0 6px rgba(0, 255, 204, 0.9),
-                    0 0 12px rgba(0, 116, 217, 0.7);
+        text-shadow: 0 0 8px rgba(0, 255, 204, 0.9),
+                    0 0 16px rgba(0, 116, 217, 0.7);
     }
 
     /* Text Glow Animation */
     .animate-text-glow {
-        animation: text-glow 2s infinite alternate;
+        animation: text-glow 1.5s infinite alternate;
     }
     @keyframes text-glow {
+        0% { text-shadow: 0 0 8px rgba(0, 255, 204, 0.7), 0 0 16px rgba(0, 116, 217, 0.5); }
+        100% { text-shadow: 0 0 20px rgba(0, 255, 204, 1), 0 0 40px rgba(0, 116, 217, 0.8); }
+    }
+
+    /* Number Glow Animation */
+    .animate-number-glow {
+        animation: number-glow 2s infinite alternate;
+    }
+    @keyframes number-glow {
         0% { text-shadow: 0 0 6px rgba(0, 255, 204, 0.6), 0 0 12px rgba(0, 116, 217, 0.4); }
-        100% { text-shadow: 0 0 15px rgba(0, 255, 204, 0.9), 0 0 30px rgba(0, 116, 217, 0.6); }
+        100% { text-shadow: 0 0 15px rgba(0, 255, 204, 0.9), 0 0 30px rgba(0, 116, 217, 0.7); }
     }
 
     /* Wave Text Animation */
@@ -468,7 +510,7 @@
     }
     @keyframes wave-text {
         0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-4px); }
+        50% { transform: translateY(-6px); }
     }
 
     /* Wave Bar Animation */
@@ -486,7 +528,7 @@
     }
     @keyframes bounce {
         0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
+        50% { transform: translateY(-12px); }
     }
 
     /* Custom Fonts */
