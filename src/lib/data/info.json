@@ -1,0 +1,23 @@
+{
+    "name": "Ngô Văn Hào",
+    "occupation": "Dev / Designer",
+    "bio": "Hello, I’m Hao. I’m a programmer passionate about technology, enjoying exploring and creating interesting applications. I’m always learning to improve myself.",
+    "location": "Việt Nam / Tu Son City",
+    "github": "https://github.com/idlehoa",
+    "skills": {
+      "web": ["Vue.js", "Nuxt.js", "Node.js", "React.js", "TypeScript", "JavaScript", "CSS", "HTML"],
+      "programming": ["Python", "PyTorch", "C", "C++", "C#", "R", "MySQL", "PostgreSQL"],
+      "tools": ["VSCode", "Vim", "Git", "Linux", "Docker", "Nginx"],
+      "design": ["Figma", "Photoshop", "Illustrator"],
+      "other": ["Markdown", "LaTeX"]
+    },
+    "contact": {
+      "email": "vanhao@theatlantis.asia",
+      "phone": "0981-xxx-x61"
+    },
+    "social": {
+      "github": "https://github.com/idlehoa",
+      "facebook": "https://www.facebook.com/nvhao294",
+      "discord": "https://discord.com/users/fatality.cuti"
+    }
+  }
