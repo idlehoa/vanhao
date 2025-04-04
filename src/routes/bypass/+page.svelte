@@ -235,7 +235,7 @@
             </h3>
             <div class="glass-container p-8 rounded-xl shadow-neon">
                 <p class="text-gray-300 text-center font-roboto-mono">
-                    Neon Bypasser: Skip ad-links with ease. Fast, secure, and free—powered by xAI.
+                    Neon Bypasser: Skip ad-links with ease. Fast, secure, and Client-Side bypass.
                 </p>
             </div>
         </section>
