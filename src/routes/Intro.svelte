@@ -13,7 +13,7 @@
 
   // Hàm chuyển hướng khi nhấn nút
   function redirectToBypass() {
-      window.location.href = 'https://vanhao.xyz/bypass';
+      window.location.href = 'https://theatlantis.asia/bypass';
   }
 </script>
 
